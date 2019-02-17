@@ -39,3 +39,10 @@ class Seller:
         response = requests.request("GET", url, data="", headers=self.headers)
 
         return jsonify(response.json())
+
+    def get_seller_by_id(self, id):
+
+        url = f"{self.ur_sellers}/{id}"
+        response = requests.request("GET", url, data="", headers=self.headers)
+
+        return jsonify(response.json())

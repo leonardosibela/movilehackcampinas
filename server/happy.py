@@ -19,8 +19,11 @@ def home():
 @app.route('/seller', methods=['POST', 'GET'])
 def seller():
     document = request.args.get('taxpayer_id')
-    print(document)
     return modelSeller.get_seller_by_document(document)
+
+@app.route('/sellers/<id>', methods=['GET'])
+def seller_id(id):
+    return modelSeller.get_seller_by_id(id)
 
 @app.route('/seller/<path:subpath>')
 def balances(subpath):
