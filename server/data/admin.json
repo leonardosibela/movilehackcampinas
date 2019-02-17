@@ -4,7 +4,7 @@
     "resource": "buyer",
     "account_balance": "0.00",
     "current_balance": "0.00",
-    "first_name": "Fernando",
+    "first_name": "Juliano",
     "last_name": "Fernandes",
     "taxpayer_id": "34401596048",
     "description": "Tesoureiro Rep Campinas",
@@ -18,20 +18,20 @@
         "line3": "APTO 202",
         "neighborhood": "Metropole",
         "city": "Campinas",
-        "state": "RJ",
+        "state": "SP",
         "postal_code": "26215170",
         "country_code": "BR"
     },
     "delinquent": false,
     "payment_methods": null,
-    "default_debit": null,
+    "default_debit": "54715056d22d4bcc8aca222493697323",
     "default_credit": null,
     "default_receipt_delivery_method": null,
     "uri": "/v1/marketplaces/3249465a7753536b62545a6a684b0000/buyers/5d1b6cd746c348fbabb46ad728bafabf",
     "metadata": {
-        "dependente_1": "Paulo Isabel",
+        "dependente_1": "Paula Isabel",
         "dependente_2": "Daniel Meireles Fernandes"
     },
     "created_at": "2019-02-17T07:10:59+00:00",
-    "updated_at": "2019-02-17T07:10:59+00:00"
+    "updated_at": "2019-02-17T09:25:09+00:00"
 }

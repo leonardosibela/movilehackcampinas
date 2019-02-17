@@ -6,8 +6,13 @@ import json
 # internal imports
 from post.login import login, get_user_by_id
 
+from post.token import Token
+from post.buyer import Buyer
+
 app = Flask(__name__)
 modelSeller = Seller()
+token = Token()
+buyer = Buyer()
 
 @app.route('/')
 def home():
@@ -47,6 +52,13 @@ def login_post():
 @app.route('/login/<userId>', methods=['GET'])
 def getUserById(userId):
     return jsonify(get_user_by_id(userId))
+
+@app.route('/cards/<userId>', methods=['POST'])
+def registerToken(userId):
+    payload = json.loads(request.data)
+    card = token.register_token_to_buyer(payload)
+    user = buyer.register_token_to_buyer(userId, card)
+    return user
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
