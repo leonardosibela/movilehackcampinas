@@ -3,14 +3,31 @@ package br.com.movilehackcampinas.digitalwallet.model;
 import java.util.Date;
 import java.util.List;
 
+import br.com.movilehackcampinas.digitalwallet.util.NumberUtil;
+
 public class Bill {
 
     private String id;
     private String groupId;
     private String name;
-    private double valor;
     private Date date;
     private List<ProratedValue> proratedValues;
+
+    public Bill() {
+    }
+
+    public Bill(String name, List<ProratedValue> proratedValues) {
+        this.name = name;
+        this.proratedValues = proratedValues;
+    }
+
+    public Bill(String id, String groupId, String name, Date date, List<ProratedValue> proratedValues) {
+        this.id = id;
+        this.groupId = groupId;
+        this.name = name;
+        this.date = date;
+        this.proratedValues = proratedValues;
+    }
 
     public String getId() {
         return id;
@@ -36,14 +53,6 @@ public class Bill {
         this.name = name;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public Date getDate() {
         return date;
     }
@@ -61,10 +70,38 @@ public class Bill {
     }
 
     public double getPercentagePayed() {
-        double totalAmount, payedAmount = 0;
+        double totalAmount = 0, payedAmount = 0;
 
         for (ProratedValue proratedValue : proratedValues) {
-            if (proratedValue)
+            totalAmount += proratedValue.getValue();
+            if (proratedValue.isPayed()) {
+                payedAmount += proratedValue.getValue();
+            }
         }
+
+        return NumberUtil.round(totalAmount / payedAmount, 4);
+    }
+
+    public String getPercentagePayedString() {
+        return NumberUtil.toPercentage(getPercentagePayed(), 2);
+    }
+
+    public double getTotalAmount() {
+        double totalAmount = 0;
+        for (ProratedValue proratedValue : proratedValues) {
+            totalAmount += proratedValue.getValue();
+        }
+        return totalAmount;
+    }
+
+    public double getPayedAmount() {
+        double payedAmount = 0;
+
+        for (ProratedValue proratedValue : proratedValues) {
+            if (proratedValue.isPayed()) {
+                payedAmount += proratedValue.getValue();
+            }
+        }
+        return payedAmount;
     }
 }

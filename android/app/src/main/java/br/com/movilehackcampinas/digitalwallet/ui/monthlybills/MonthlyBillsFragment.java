@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import br.com.movilehackcampinas.digitalwallet.R;
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
 
 public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.View {
 
     private MonthlyBillsTask.Presenter presenter;
+    private BillListAdapter adapter;
 
     public static MonthlyBillsFragment newInstance() {
         return new MonthlyBillsFragment();
@@ -31,11 +33,18 @@ public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.V
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        setupAdapter();
+
         presenter = new MonthlyBillsPresenter(this);
     }
 
+    private void setupAdapter() {
+
+    }
+
     @Override
-    public void displayBills(List<Bill> allBills) {
+    public void displayBills(List<Bill> bills) {
+        adapter = new BillListAdapter(bills);
 
     }
 }

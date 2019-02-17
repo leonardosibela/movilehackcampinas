@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.movilehackcampinas.digitalwallet.R;
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,9 +30,13 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BillViewHolder billViewHolder, int position) {
+    public void onBindViewHolder(@NonNull BillViewHolder holder, int position) {
         Bill bill = bills.get(position);
 
+        holder.billName.setText(bill.getName());
+        holder.totalAmount.setText("R$" + bill.getTotalAmount());
+        holder.percentage.setText(bill.getPercentagePayedString());
+        holder.payedAmount.setText("R$" + bill.getPayedAmount());
     }
 
     @Override

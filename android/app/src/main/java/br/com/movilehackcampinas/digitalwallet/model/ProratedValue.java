@@ -1,11 +1,21 @@
 package br.com.movilehackcampinas.digitalwallet.model;
 
-class ProratedValue {
+public class ProratedValue {
 
     private String id;
     private User user;
     private double value;
     private boolean payed;
+
+    public ProratedValue() {
+    }
+
+    public ProratedValue(String id, User user, double value, boolean payed) {
+        this.id = id;
+        this.user = user;
+        this.value = value;
+        this.payed = payed;
+    }
 
     public String getId() {
         return id;

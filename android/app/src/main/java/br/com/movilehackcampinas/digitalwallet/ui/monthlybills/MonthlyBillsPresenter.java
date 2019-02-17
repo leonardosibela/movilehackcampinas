@@ -3,6 +3,7 @@ package br.com.movilehackcampinas.digitalwallet.ui.monthlybills;
 import java.util.List;
 
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
+import br.com.movilehackcampinas.digitalwallet.util.MockUtil;
 
 public class MonthlyBillsPresenter implements MonthlyBillsTask.Presenter {
 
@@ -14,10 +15,9 @@ public class MonthlyBillsPresenter implements MonthlyBillsTask.Presenter {
 
     @Override
     public void onViewReady() {
-        view.displayBills(getAllBills());
-    }
+        // FIXME: ASK SERVER FOR BILLS
 
-    private List<Bill> getAllBills() {
-        return null;
+        List<Bill> bills = MockUtil.getSomeBills();
+        view.displayBills(bills);
     }
 }
