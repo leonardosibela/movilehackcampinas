@@ -1,0 +1,37 @@
+{
+    "id": "5d1b6cd746c348fbabb46ad728bafabf",
+    "status": "active",
+    "resource": "buyer",
+    "account_balance": "0.00",
+    "current_balance": "0.00",
+    "first_name": "Fernando",
+    "last_name": "Fernandes",
+    "taxpayer_id": "34401596048",
+    "description": "Tesoureiro Rep Campinas",
+    "email": "fernandofernandes@gmail.com",
+    "phone_number": "+5511996997909",
+    "facebook": null,
+    "twitter": null,
+    "address": {
+        "line1": "Rua Paraguai",
+        "line2": "104",
+        "line3": "APTO 202",
+        "neighborhood": "Metropole",
+        "city": "Campinas",
+        "state": "RJ",
+        "postal_code": "26215170",
+        "country_code": "BR"
+    },
+    "delinquent": false,
+    "payment_methods": null,
+    "default_debit": null,
+    "default_credit": null,
+    "default_receipt_delivery_method": null,
+    "uri": "/v1/marketplaces/3249465a7753536b62545a6a684b0000/buyers/5d1b6cd746c348fbabb46ad728bafabf",
+    "metadata": {
+        "dependente_1": "Paulo Isabel",
+        "dependente_2": "Daniel Meireles Fernandes"
+    },
+    "created_at": "2019-02-17T07:10:59+00:00",
+    "updated_at": "2019-02-17T07:10:59+00:00"
+}

@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 import json
 
 # internal imports
-from post.login import login
+from post.login import login, get_user_by_id
 
 app = Flask(__name__)
 modelSeller = Seller()
@@ -44,11 +44,9 @@ def login_post():
     return jsonify({'status': 400})
 
 
-@app.route('/getUser/<userId>')
+@app.route('/login/<userId>', methods=['GET'])
 def getUserById(userId):
-    return jsonify({
-        "id": 0,
-    })
+    return jsonify(get_user_by_id(userId))
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
