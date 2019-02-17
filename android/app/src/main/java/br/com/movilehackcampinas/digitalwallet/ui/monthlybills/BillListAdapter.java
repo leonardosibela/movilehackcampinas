@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.movilehackcampinas.digitalwallet.R;
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
 import butterknife.BindView;
 import butterknife.ButterKnife;
