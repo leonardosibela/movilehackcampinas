@@ -12,7 +12,7 @@ class Seller:
     def get_balances(self, seller_id=None):
         
         if seller_id is None:
-            seller_id = "02f1add4edad4802bbb8afa1518224e9"
+            seller_id = "63387a05b5ab4a19aadfdf77e472a1d4"
 
         url = f"{self.ur_sellers}/{seller_id}/balances"
         response = requests.request("GET", url, data="", headers=self.headers)
