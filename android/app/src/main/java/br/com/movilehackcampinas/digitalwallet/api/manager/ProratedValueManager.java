@@ -1,18 +1,20 @@
 package br.com.movilehackcampinas.digitalwallet.api.manager;
 
 import br.com.movilehackcampinas.digitalwallet.api.APIService;
-import br.com.movilehackcampinas.digitalwallet.model.User;
+import br.com.movilehackcampinas.digitalwallet.model.ProratedValue;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserManager {
+public class ProratedValueManager {
 
-    private void createUser(User user, UserManagerCallback callback) {
-        APIService.getService().getUserService().createUser(user).enqueue(new Callback<Void>() {
+    public void payProratedBill(ProratedValue proratedValue, ProratedValueManagerCallback callback) {
+        APIService.getService().getProratedValueService().payProratedValue(proratedValue).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                callback.onSuccess();
+                if (response.isSuccessful()) {
+                    callback.onSuccess();
+                }
             }
 
             @Override
@@ -20,9 +22,10 @@ public class UserManager {
                 callback.onFailure();
             }
         });
+
     }
 
-    interface UserManagerCallback {
+    interface ProratedValueManagerCallback{
         void onSuccess();
         void onFailure();
     }

@@ -1,8 +1,7 @@
 package br.com.movilehackcampinas.digitalwallet.api;
 
-import br.com.movilehackcampinas.digitalwallet.api.services.GroupService;
 import br.com.movilehackcampinas.digitalwallet.api.services.LoginService;
-import br.com.movilehackcampinas.digitalwallet.api.services.UserService;
+import br.com.movilehackcampinas.digitalwallet.api.services.PayProratedValue;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -19,18 +18,11 @@ public class APIService {
         }
         return sInstance.create(APIService.class);
     }
-
-    public UserService getUserService(){
-        return sInstance.create(UserService.class);
-    }
-
     public LoginService getLoginService(){
         return sInstance.create(LoginService.class);
     }
 
-    public GroupService getGroupService(){
-        return sInstance.create(GroupService.class);
+    public PayProratedValue getProratedValueService(){
+        return sInstance.create(PayProratedValue.class);
     }
-
-
 }

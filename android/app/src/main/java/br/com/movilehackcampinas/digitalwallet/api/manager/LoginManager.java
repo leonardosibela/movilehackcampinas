@@ -1,32 +1,53 @@
 package br.com.movilehackcampinas.digitalwallet.api.manager;
 
+import java.util.List;
+
 import br.com.movilehackcampinas.digitalwallet.api.APIService;
-import br.com.movilehackcampinas.digitalwallet.model.User;
+import br.com.movilehackcampinas.digitalwallet.model.Bill;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginManager {
 
-    public void login(String email, LoginManagerCallback callback){
-        APIService.getService().getLoginService().login(email).enqueue(new Callback<User>() {
+    public void loginAdmin(LoginManagerCallback callback){
+        String userId = "5d1b6cd746c348fbabb46ad728bafabf";
+        APIService.getService().getLoginService().loginAdmin(userId).enqueue(new Callback<List<Bill>>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<List<Bill>> call, Response<List<Bill>> response) {
                 if (response.isSuccessful()) {
-                    User user = response.body();
-                    callback.onSuccess(user);
+                    List<Bill> billList = response.body();
+                    callback.onSuccess(billList);
                 }
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<List<Bill>> call, Throwable t) {
+                callback.onFailure();
+            }
+        });
+    }
+
+    public void loginUser(LoginManagerCallback callback){
+        String userId = "5d1b6cd746c348fbabb46ad728bafabf";
+        APIService.getService().getLoginService().loginUser(userId).enqueue(new Callback<List<Bill>>() {
+            @Override
+            public void onResponse(Call<List<Bill>> call, Response<List<Bill>> response) {
+                if (response.isSuccessful()) {
+                    List<Bill> billList = response.body();
+                    callback.onSuccess(billList);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Bill>> call, Throwable t) {
                 callback.onFailure();
             }
         });
     }
 
     interface LoginManagerCallback {
-        void onSuccess(User user);
+        void onSuccess(List<Bill> billList);
         void onFailure();
     }
 }

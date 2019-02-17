@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import br.com.movilehackcampinas.digitalwallet.R;
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
 
 public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.View {

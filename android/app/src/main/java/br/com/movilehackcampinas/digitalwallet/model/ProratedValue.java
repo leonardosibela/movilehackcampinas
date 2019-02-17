@@ -1,10 +1,19 @@
 package br.com.movilehackcampinas.digitalwallet.model;
 
-class ProratedValue {
+import com.google.gson.annotations.SerializedName;
 
+public class ProratedValue {
+
+    @SerializedName("id")
     private String id;
+
+    @SerializedName("user")
     private User user;
+
+    @SerializedName("value")
     private double value;
+
+    @SerializedName("payed")
     private boolean payed;
 
     public String getId() {

@@ -1,15 +1,25 @@
 package br.com.movilehackcampinas.digitalwallet.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 import java.util.List;
 
 public class Bill {
 
+    @SerializedName("id")
     private String id;
+
+    @SerializedName("groupId")
     private String groupId;
+
+    @SerializedName("name")
     private String name;
-    private double valor;
+
+    @SerializedName("date")
     private Date date;
+
+    @SerializedName("proratedvalues")
     private List<ProratedValue> proratedValues;
 
     public String getId() {
@@ -34,14 +44,6 @@ public class Bill {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
     }
 
     public Date getDate() {
