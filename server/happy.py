@@ -1,13 +1,17 @@
 import os
 from get.seller import Seller
 from flask import Flask, jsonify, request
+import json
+
+# internal imports
+from post.login import login
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
-    return jsonify(
-    {
+    return jsonify({
         "id": 0,
     })
 
@@ -24,6 +28,16 @@ def balances():
             "account_balance": account
         })
     return 'Tes'
+
+# login post requesr
+@app.route('/login', methods=['POST'])
+def login_post():
+    payload = json.loads(request.data)
+    if (payload.get('first_name') and
+            payload.get('last_name') and payload.get('taxpayer_id')):
+        return jsonify(login(json.dumps(payload)).json())
+    return jsonify({'status': 400})
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
