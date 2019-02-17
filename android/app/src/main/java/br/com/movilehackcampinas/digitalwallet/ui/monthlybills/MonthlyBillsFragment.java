@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import br.com.movilehackcampinas.digitalwallet.R;
+import java.util.List;
+
+import br.com.movilehackcampinas.digitalwallet.model.Bill;
 
 public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.View {
 
@@ -30,5 +32,10 @@ public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.V
         super.onViewCreated(view, savedInstanceState);
 
         presenter = new MonthlyBillsPresenter(this);
+    }
+
+    @Override
+    public void displayBills(List<Bill> allBills) {
+
     }
 }
