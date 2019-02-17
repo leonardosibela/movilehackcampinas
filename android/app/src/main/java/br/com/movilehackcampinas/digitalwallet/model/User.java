@@ -1,6 +1,6 @@
 package br.com.movilehackcampinas.digitalwallet.model;
 
-class User {
+public class User {
 
     private String id;
     private String firstName;

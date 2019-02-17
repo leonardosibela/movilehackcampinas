@@ -63,8 +63,9 @@ public class Bill {
     public double getPercentagePayed() {
         double totalAmount, payedAmount = 0;
 
-        for (ProratedValue proratedValue : proratedValues) {
+       /* for (ProratedValue proratedValue : proratedValues) {
             if (proratedValue)
-        }
+        }*/
+        return 1;
     }
 }
