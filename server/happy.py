@@ -16,18 +16,23 @@ def home():
         "id": 0,
     })
 
-@app.route('/seller', methods=['POST', 'GET'])
+@app.route('/seller', methods=['GET'])
 def seller():
     document = request.args.get('taxpayer_id')
     return modelSeller.get_seller_by_document(document)
+
+@app.route('/seller/<path:subpath>', methods=['GET'])
+def balances(subpath):
+    return modelSeller.get_balances()
 
 @app.route('/sellers/<id>', methods=['GET'])
 def seller_id(id):
     return modelSeller.get_seller_by_id(id)
 
-@app.route('/seller/<path:subpath>')
-def balances(subpath):
-    return modelSeller.get_balances()
+@app.route('/sellers/individuals', methods=['POST'])
+def add_seller():
+    seller = request.get_json()
+    return modelSeller.add_seller_individuals(seller)
 
 # login post requesr
 @app.route('/login', methods=['POST'])

@@ -46,3 +46,23 @@ class Seller:
         response = requests.request("GET", url, data="", headers=self.headers)
 
         return jsonify(response.json())
+
+    def add_seller_individuals(self, seller):
+
+        if seller is None:
+            seller = jsonify({
+                "first_name": "Renan",
+                "last_name": "Vieira Chagas",
+                "email": "renanvieira@live.com",
+                "phone_number": "+5521994629098",
+                "ssn_last4_digits": "5763",
+                "birthdate": "1990-11-21",
+                "taxpayer_id": "13386205763"
+            })
+
+        url = f"{self.ur_sellers}/individuals"
+        response = requests.request("POST", url, data=seller, headers=self.headers)
+
+        print(response)
+
+        return "TESTE"
