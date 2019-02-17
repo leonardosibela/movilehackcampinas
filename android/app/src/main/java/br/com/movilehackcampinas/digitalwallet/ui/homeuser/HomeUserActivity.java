@@ -2,6 +2,7 @@ package br.com.movilehackcampinas.digitalwallet.ui.homeuser;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -12,7 +13,7 @@ import br.com.movilehackcampinas.digitalwallet.util.MockUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeUserActivity extends Activity {
+public class HomeUserActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_list)
     RecyclerView mRecyclerView;
@@ -23,6 +24,8 @@ public class HomeUserActivity extends Activity {
         setContentView(R.layout.activity_home_user);
 
         ButterKnife.bind(this);
+
+        getSupportActionBar().setTitle("Olá João Perdro - Saldo: R$1.204,00");
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
         //recyclerView.addItemDecoration(new SimpleItemDecoration(getBaseContext()));

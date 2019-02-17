@@ -14,6 +14,7 @@
         <activity
             android:name=".ui.homeuser.HomeUserActivity"
             android:label="@string/title_activity_home_user"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".SplashActivity"

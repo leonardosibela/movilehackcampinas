@@ -1,13 +1,13 @@
 package br.com.movilehackcampinas.digitalwallet.util;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class StringUtil {
 
     public static String doubleToCurrency(double value) {
-        float epsilon = 0.004f; // 4 tenths of a cent
-        if (Math.abs(Math.round(value) - value) < epsilon) {
-            return "R$" + String.format("%10.0f", value); // sdb
-        } else {
-            return "R$" + String.format("%10.2f", value); // dj_segfault
-        }
+        Locale locale = Locale.getDefault();
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+        return numberFormat.format(value);
     }
 }
