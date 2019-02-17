@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">DigitalWallet</string>
+    <string name="app_name">Happÿ</string>
+
+    <string name="user_admin">Administrador</string>
+    <string name="user_common">Usuário Comum</string>
+    <string name="title_activity_home_user">HomeUserActivity</string>
 </resources>
