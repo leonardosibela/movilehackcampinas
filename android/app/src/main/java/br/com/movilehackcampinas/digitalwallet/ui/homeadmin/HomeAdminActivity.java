@@ -25,11 +25,10 @@ public class HomeAdminActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        getSupportActionBar().setTitle("Olá Leonardo - Saldo: R$5.000,00");
+        getSupportActionBar().setTitle("Saldo: R$5.000,00");
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        //recyclerView.addItemDecoration(new SimpleItemDecoration(getBaseContext()));
         adapter = new AdminBillListAdapter(MockUtil.getSomeBills());
         recyclerView.setAdapter(adapter);
 

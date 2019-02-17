@@ -37,15 +37,14 @@ public class AdminBillListAdapter extends RecyclerView.Adapter<AdminBillListAdap
     public void onBindViewHolder(@NonNull AdminBillItemViewHolder holder, int i) {
         Bill bill = billsList.get(i);
         holder.billName.setText(bill.getName());
-        holder.value.setText("R$ " + String.valueOf(StringUtil.doubleToCurrency(bill.getTotalAmount())));
-        holder.payedAmount.setText("R$ " + String.valueOf(StringUtil.doubleToCurrency(bill.getPayedAmount())));
+        holder.value.setText(StringUtil.doubleToCurrency(bill.getTotalAmount()));
+        holder.payedAmount.setText(StringUtil.doubleToCurrency(bill.getPayedAmount()));
 
         AdminBillFragmentedAdapter adapter = new AdminBillFragmentedAdapter(bill.getProratedValues());
         holder.billFragmentedRecycler.setAdapter(adapter);
 
         holder.billFragmentedRecycler.setHasFixedSize(true);
         holder.billFragmentedRecycler.setLayoutManager(new LinearLayoutManager(holder.billFragmentedRecycler.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        //recyclerView.addItemDecoration(new SimpleItemDecoration(getBaseContext()));
         adapter = new AdminBillFragmentedAdapter(bill.getProratedValues());
         holder.billFragmentedRecycler.setAdapter(adapter);
     }

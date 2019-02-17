@@ -25,7 +25,7 @@ public class HomeUserActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        getSupportActionBar().setTitle("Olá João Perdro - Saldo: R$1.204,00");
+        getSupportActionBar().setTitle("Saldo: R$1.204,00");
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
         //recyclerView.addItemDecoration(new SimpleItemDecoration(getBaseContext()));

@@ -1,5 +1,6 @@
 package br.com.movilehackcampinas.digitalwallet.ui.homeuser;
 
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -37,6 +39,7 @@ public class UserBillAdapter extends RecyclerView.Adapter<UserBillAdapter.UserBi
         UserBill userBill = userBills.get(i);
         holder.billName.setText(userBill.getName());
         holder.totalAmount.setText(StringUtil.doubleToCurrency(userBill.getValue()));
+        holder.loader.setVisibility(View.INVISIBLE);
 
         if (userBill.isPayed()) {
             holder.payButton.setVisibility(View.INVISIBLE);
@@ -45,6 +48,15 @@ public class UserBillAdapter extends RecyclerView.Adapter<UserBillAdapter.UserBi
             holder.payButton.setVisibility(View.VISIBLE);
             holder.payedImage.setVisibility(View.INVISIBLE);
         }
+
+        holder.payButton.setOnClickListener(view -> {
+            holder.loader.setVisibility(View.VISIBLE);
+            holder.payButton.setVisibility(View.INVISIBLE);
+            new Handler().postDelayed(() -> {
+                holder.payedImage.setVisibility(View.VISIBLE);
+                holder.loader.setVisibility(View.INVISIBLE);
+            }, 2000);
+        });
     }
 
     @Override
@@ -65,6 +77,9 @@ public class UserBillAdapter extends RecyclerView.Adapter<UserBillAdapter.UserBi
 
         @BindView(R.id.payedImage)
         ImageView payedImage;
+
+        @BindView(R.id.loader)
+        ProgressBar loader;
 
         public UserBillViewHolder(@NonNull View itemView) {
             super(itemView);
