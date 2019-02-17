@@ -26,6 +26,6 @@ def login(payload):
 
 def get_user_by_id(id):
     if (id == '5d1b6cd746c348fbabb46ad728bafabf'):
-        return bills
+        return [bills]
     
-    return bills_user
+    return [bills_user]
