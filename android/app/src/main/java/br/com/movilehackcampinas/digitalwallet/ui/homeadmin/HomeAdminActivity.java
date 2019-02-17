@@ -13,12 +13,6 @@ import butterknife.ButterKnife;
 
 public class HomeAdminActivity extends AppCompatActivity {
 
-    @BindView(R.id.name_and_residence)
-    TextView nameAndResidence;
-
-    @BindView(R.id.balance)
-    TextView balance;
-
     @BindView(R.id.bills_admin_recycler)
     RecyclerView recyclerView;
 
@@ -30,6 +24,8 @@ public class HomeAdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_admin);
 
         ButterKnife.bind(this);
+
+        getSupportActionBar().setTitle("Olá Leonardo - Saldo: R$5.000,00");
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
