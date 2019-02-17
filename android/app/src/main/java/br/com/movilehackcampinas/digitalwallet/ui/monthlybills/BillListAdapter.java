@@ -45,7 +45,7 @@ public class BillListAdapter extends RecyclerView.Adapter<BillListAdapter.BillVi
         @BindView(R.id.bill_name)
         TextView billName;
 
-        @BindView(R.id.total_amount)
+        @BindView(R.id.totalAmount)
         TextView totalAmount;
 
         @BindView(R.id.percentage)

@@ -9,7 +9,7 @@ import retrofit2.Response;
 public class ProratedValueManager {
 
     public void payProratedBill(ProratedValue proratedValue, ProratedValueManagerCallback callback) {
-        APIService.getService().getProratedValueService().payProratedValue(proratedValue).enqueue(new Callback<Void>() {
+        new APIService().getService().getProratedValueService().payProratedValue(proratedValue).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {

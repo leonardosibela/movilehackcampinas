@@ -8,7 +8,7 @@
     tools:context=".ui.homeadmin.HomeAdminActivity">
 
     <TextView
-        android:id="@+id/nameAndResidence"
+        android:id="@+id/name_and_residence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,7 +41,7 @@
         android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameAndResidence" />
+        app:layout_constraintTop_toBottomOf="@+id/name_and_residence" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/bills_admin_recycler"

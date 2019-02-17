@@ -16,6 +16,13 @@ public class ProratedValue {
     @SerializedName("payed")
     private boolean payed;
 
+    public ProratedValue(String id, User user, double value, boolean payed) {
+        this.id = id;
+        this.user = user;
+        this.value = value;
+        this.payed = payed;
+    }
+
     public String getId() {
         return id;
     }
@@ -47,4 +54,5 @@ public class ProratedValue {
     public void setPayed(boolean payed) {
         this.payed = payed;
     }
+
 }

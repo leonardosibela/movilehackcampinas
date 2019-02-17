@@ -12,7 +12,7 @@ public class LoginManager {
 
     public void loginAdmin(LoginManagerCallback callback){
         String userId = "5d1b6cd746c348fbabb46ad728bafabf";
-        APIService.getService().getLoginService().loginAdmin(userId).enqueue(new Callback<List<Bill>>() {
+        new APIService().getService().getLoginService().loginAdmin(userId).enqueue(new Callback<List<Bill>>() {
             @Override
             public void onResponse(Call<List<Bill>> call, Response<List<Bill>> response) {
                 if (response.isSuccessful()) {
@@ -30,7 +30,7 @@ public class LoginManager {
 
     public void loginUser(LoginManagerCallback callback){
         String userId = "5d1b6cd746c348fbabb46ad728bafabf";
-        APIService.getService().getLoginService().loginUser(userId).enqueue(new Callback<List<Bill>>() {
+        new APIService().getService().getLoginService().loginUser(userId).enqueue(new Callback<List<Bill>>() {
             @Override
             public void onResponse(Call<List<Bill>> call, Response<List<Bill>> response) {
                 if (response.isSuccessful()) {
@@ -46,7 +46,7 @@ public class LoginManager {
         });
     }
 
-    interface LoginManagerCallback {
+    public interface LoginManagerCallback {
         void onSuccess(List<Bill> billList);
         void onFailure();
     }

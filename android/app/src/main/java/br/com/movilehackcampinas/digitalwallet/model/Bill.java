@@ -22,6 +22,14 @@ public class Bill {
     @SerializedName("proratedvalues")
     private List<ProratedValue> proratedValues;
 
+    public Bill(String id, String groupId, String name, Date date, List<ProratedValue> proratedValues) {
+        this.id = id;
+        this.groupId = groupId;
+        this.name = name;
+        this.date = date;
+        this.proratedValues = proratedValues;
+    }
+
     public String getId() {
         return id;
     }
@@ -69,5 +77,21 @@ public class Bill {
             if (proratedValue)
         }*/
         return 1;
+    }
+
+    public double getTotalAmount() {
+        double totalAmount = 0;
+        for (ProratedValue proratedValue : proratedValues) {
+            totalAmount += proratedValue.getValue();
+        }
+        return totalAmount;
+    }
+
+    public double getPayedAmount() {
+        double payedAmount = 0;
+        for (ProratedValue proratedValue : proratedValues) {
+            if (proratedValue.isPayed()) payedAmount += proratedValue.getValue();
+        }
+        return payedAmount;
     }
 }

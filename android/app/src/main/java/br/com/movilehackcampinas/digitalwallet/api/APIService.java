@@ -9,14 +9,14 @@ public class APIService {
 
     private static Retrofit sInstance;
 
-    public static APIService getService() {
+    public APIService getService() {
         if (sInstance == null) {
             sInstance= new Retrofit.Builder()
-                    .baseUrl("https://api.github.com")
+                    .baseUrl("https://a67291d6.ngrok.io")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-        return sInstance.create(APIService.class);
+        return this;
     }
     public LoginService getLoginService(){
         return sInstance.create(LoginService.class);
