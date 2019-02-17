@@ -9,7 +9,6 @@ from post.login import login
 app = Flask(__name__)
 modelSeller = Seller()
 
-
 @app.route('/')
 def home():
     return jsonify({
