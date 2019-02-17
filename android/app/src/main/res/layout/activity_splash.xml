@@ -21,37 +21,37 @@
         android:textColor="@android:color/white"
         android:textSize="64sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/register_button"
+        app:layout_constraintBottom_toTopOf="@+id/admin_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/register_button"
+        android:id="@+id/admin_user"
         android:layout_width="137dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/button_white_shape"
-        android:text="@string/welcome_register"
+        android:text="@string/user_admin"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/login_button"
+        app:layout_constraintEnd_toStartOf="@+id/common_user"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/common_user"
         android:layout_width="137dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/button_accent_shape"
-        android:text="@string/welcome_login"
+        android:text="@string/user_common"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/register_button" />
+        app:layout_constraintStart_toEndOf="@+id/admin_user" />
 
 </android.support.constraint.ConstraintLayout>

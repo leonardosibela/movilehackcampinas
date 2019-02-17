@@ -9,6 +9,7 @@ import java.util.List;
 import br.com.movilehackcampinas.digitalwallet.model.Bill;
 import br.com.movilehackcampinas.digitalwallet.model.ProratedValue;
 import br.com.movilehackcampinas.digitalwallet.model.User;
+import br.com.movilehackcampinas.digitalwallet.model.UserBill;
 
 public class MockUtil {
 
@@ -48,6 +49,15 @@ public class MockUtil {
         proratedValues.add(new ProratedValue("3", getUserC(), 25, false));
 
         return proratedValues;
+    }
+
+    public static List<UserBill> getSomeUserBills() {
+        List<UserBill> userBills = new ArrayList<>();
+        userBills.add(new UserBill("Aluguel", 500, true));
+        userBills.add(new UserBill("Água", 30.37, false));
+        userBills.add(new UserBill("Luz", 53, true));
+        userBills.add(new UserBill("Internet", 25.5, false));
+        return userBills;
     }
 
     public static List<ProratedValue> getProratedValuesC() {
