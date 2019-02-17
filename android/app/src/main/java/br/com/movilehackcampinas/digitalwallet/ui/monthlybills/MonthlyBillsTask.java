@@ -1,4 +1,4 @@
-package br.com.movilehackcampinas.digitalwallet.modules.monthlybills.task;
+package br.com.movilehackcampinas.digitalwallet.ui.monthlybills;
 
 public interface MonthlyBillsTask {
 

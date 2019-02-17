@@ -3,7 +3,7 @@ package br.com.movilehackcampinas.digitalwallet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import br.com.movilehackcampinas.digitalwallet.modules.monthlybills.view.MonthlyBillsFragment;
+import br.com.movilehackcampinas.digitalwallet.ui.monthlybills.MonthlyBillsFragment;
 
 public class MainActivity extends AppCompatActivity {
 

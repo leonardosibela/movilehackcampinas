@@ -5,7 +5,7 @@
     android:id="@+id/monthlybills"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".modules.monthlybills.view.MonthlyBillsFragment">
+    tools:context=".ui.monthlybills.MonthlyBillsFragment">
 
     <TextView
         android:id="@+id/message"

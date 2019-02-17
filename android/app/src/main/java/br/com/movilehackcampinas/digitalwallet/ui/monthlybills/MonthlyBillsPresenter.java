@@ -1,6 +1,4 @@
-package br.com.movilehackcampinas.digitalwallet.modules.monthlybills.presenter;
-
-import br.com.movilehackcampinas.digitalwallet.modules.monthlybills.task.MonthlyBillsTask;
+package br.com.movilehackcampinas.digitalwallet.ui.monthlybills;
 
 public class MonthlyBillsPresenter implements MonthlyBillsTask.Presenter {
 

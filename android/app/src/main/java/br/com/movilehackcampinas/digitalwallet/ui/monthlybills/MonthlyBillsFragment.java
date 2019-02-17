@@ -1,4 +1,4 @@
-package br.com.movilehackcampinas.digitalwallet.modules.monthlybills.view;
+package br.com.movilehackcampinas.digitalwallet.ui.monthlybills;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.movilehackcampinas.digitalwallet.R;
-import br.com.movilehackcampinas.digitalwallet.modules.monthlybills.presenter.MonthlyBillsPresenter;
-import br.com.movilehackcampinas.digitalwallet.modules.monthlybills.task.MonthlyBillsTask;
 
 public class MonthlyBillsFragment extends Fragment implements MonthlyBillsTask.View {
 
