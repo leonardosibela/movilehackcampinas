@@ -9,8 +9,11 @@ class Seller:
     url_marketplaces = f"{api_base}marketplaces/{marketplace_id}"
     ur_sellers = f"{api_base}marketplaces/{marketplace_id}/sellers"
 
-    def get_balances(self, seller_id="02f1add4edad4802bbb8afa1518224e9"):
+    def get_balances(self, seller_id=None):
         
+        if seller_id is None:
+            seller_id = "02f1add4edad4802bbb8afa1518224e9"
+
         url = f"{self.ur_sellers}/{seller_id}/balances"
         response = requests.request("GET", url, data="", headers=self.headers)
         response = response.json()
@@ -27,7 +30,11 @@ class Seller:
             "account_balance": account
         })
 
-    def get_seller_by_document(self, document="13386205763"):
+    def get_seller_by_document(self, document=None):
+
+        if document is None:
+            document = "13386205763"
+
         url = f"{self.ur_sellers}/search?taxpayer_id={document}"
         response = requests.request("GET", url, data="", headers=self.headers)
 
