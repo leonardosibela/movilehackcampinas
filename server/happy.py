@@ -7,6 +7,7 @@ import json
 from post.login import login
 
 app = Flask(__name__)
+modelSeller = Seller()
 
 
 @app.route('/')
@@ -15,19 +16,13 @@ def home():
         "id": 0,
     })
 
-@app.route('/seller/balances')
-def balances():
-    seller = Seller()
-    response = seller.get_balances()
-    if response.get('items'):
-        items = response.get('items')
-        current = items.get('current_balance')
-        account = items.get('account_balance')
-        return jsonify({
-            "current_balance": current,
-            "account_balance": account
-        })
-    return 'Tes'
+@app.route('/seller')
+def seller():
+    return modelSeller.get_seller_by_document()
+
+@app.route('/seller/<path:subpath>')
+def balances(subpath):
+    return modelSeller.get_balances()
 
 # login post requesr
 @app.route('/login', methods=['POST'])
