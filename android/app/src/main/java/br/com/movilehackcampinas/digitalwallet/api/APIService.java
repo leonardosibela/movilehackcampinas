@@ -1,5 +1,6 @@
 package br.com.movilehackcampinas.digitalwallet.api;
 
+import br.com.movilehackcampinas.digitalwallet.api.services.GroupService;
 import br.com.movilehackcampinas.digitalwallet.api.services.LoginService;
 import br.com.movilehackcampinas.digitalwallet.api.services.UserService;
 import retrofit2.Retrofit;
@@ -25,6 +26,10 @@ public class APIService {
 
     public LoginService getLoginService(){
         return sInstance.create(LoginService.class);
+    }
+
+    public GroupService getGroupService(){
+        return sInstance.create(GroupService.class);
     }
 
 
